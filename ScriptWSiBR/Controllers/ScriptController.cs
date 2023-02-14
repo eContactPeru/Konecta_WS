@@ -521,7 +521,7 @@ namespace ScriptWSiBR.Controllers
 
                     var transaction = connection.BeginTransaction();
 
-                    var query = "GC_CrearTicket_PP";
+                    var query = "GC_PP_CrearTicket";
                     var command = new SqlCommand(query, connection)
                     {
                         CommandType = CommandType.StoredProcedure,
@@ -529,6 +529,7 @@ namespace ScriptWSiBR.Controllers
                     };
                     command.Parameters.AddWithValue("@PP_conversationId", ticket.conversationId ?? "");
                     command.Parameters.AddWithValue("@PP_fechaInteraccion", ticket.fechaInteraccion ?? "");
+                    command.Parameters.AddWithValue("@PP_agente", ticket.agente ?? "");
                     command.Parameters.AddWithValue("@PP_medio", ticket.medio ?? "");
                     command.Parameters.AddWithValue("@PP_segmentoCliente", ticket.segmentoCliente);
                     command.Parameters.AddWithValue("@PP_telefono", ticket.telefono);

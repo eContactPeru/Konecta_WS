@@ -36,6 +36,7 @@ namespace ScriptWSiBR.Models
     {
         public string conversationId { get; set; }
         public string fechaInteraccion{ get; set; }
+        public string agente { get; set; }
         public string medio { get; set; }
         public string segmentoCliente { get; set; }
         public string telefono { get; set; }
